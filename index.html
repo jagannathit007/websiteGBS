@@ -81,6 +81,69 @@
             -webkit-column-break-inside: avoid;
             -moz-column-break-inside: avoid;
         }
+
+        /* Regional Advisor Board Styles */
+        .board-container {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .board-container::before,
+        .board-container::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .board-container::before {
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #d4a574 0%, transparent 70%);
+            border-radius: 0 0 100% 0;
+        }
+
+        .board-container::after {
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(315deg, #d4a574 0%, transparent 70%);
+            border-radius: 100% 0 0 0;
+        }
+
+        .board-member-card {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .board-member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .board-member-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #540A0E;
+            box-shadow: 0 8px 16px rgba(84, 10, 14, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .board-member-name {
+            font-weight: 700;
+            color: #540A0E;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .board-member-title {
+            color: #666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -389,47 +452,115 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-20 bg-gray-50">
+    <!-- Regional Advisor Board Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- GBS Logo and Title -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="flex justify-center mb-4">
+                    <img src="./images/gbs-logo (1).png" alt="GBS Logo" class="h-16 md:h-20">
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">REGIONAL ADVISOR BOARD</h2>
+            </div>
+
+            <!-- Board Members Grid -->
+            <div class="board-container rounded-2xl p-8 md:p-12 shadow-xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6">
+                    <!-- Top Row - 4 Members -->
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/board-member/IMG_4600.jpg" 
+                             alt="Gaurav Jogi" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">GAURAV JOGI</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                    
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/board-member/DSC00243.jpg" 
+                             alt="Sunil Mawndia" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">SUNIL MAWNDIA</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                    
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/board-member/DSC00228.jpg" 
+                             alt="Vishal Jariwala" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">VISHAL JARIWALA</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                    
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/board-member/DSC00204 (1).jpg" 
+                             alt="Arpit Shah" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">ARPIT SHAH</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Row - 3 Members (centered) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="500">
+                        <img src="images/board-member/DSC09931.jpg" 
+                             alt="Gaurav Trivedi" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">GAURAV TRIVEDI</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                    
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="600">
+                        <img src="" 
+                             alt="Dr. Malay Parekh" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">DR. MALAY PAREKH</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                    
+                    <div class="board-member-card text-center" data-aos="fade-up" data-aos-delay="700">
+                        <img src="images/board-member/WhatsApp Image 2025-07-11 at 3.47.29 PM.jpg" 
+                             alt="Dr. Khhushbu Joshi" 
+                             class="board-member-img mx-auto">
+                        <h3 class="board-member-name">DR. KHHUSHBU JOSHI</h3>
+                        <p class="board-member-title">Regional Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Team Section -->
+    <section id="core-team" class="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-primary mb-4">Meet Our Team</h2>
+                <h2 class="text-4xl font-bold text-primary mb-4">Our Core Team</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Passionate professionals dedicated to helping you succeed in your networking journey.</p>
             </div>
-    
 
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="team-card p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="team-card bg-white p-8 rounded-2xl shadow-xl text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative mb-6 group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
                         <img src="images/pinkeshpatel.jpeg" 
-                             alt="Team Member" class="w-32 h-32 rounded-full mx-auto object-cover">
+                             alt="Pinkesh Patel" 
+                             class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-primary shadow-lg relative z-10">
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-2">Pinkesh Patel</h3>
-                    <p class="text-gray-600 mb-4">Founder Of GBS</p>
-                    <p class="text-sm text-gray-500">Ensuring smooth operations and helping chapters thrive across different regions and industries.</p>
+                    <h3 class="text-2xl font-bold text-primary mb-2">Pinkesh Patel</h3>
+                    <p class="text-primary font-semibold mb-4 text-lg">Founder Of GBS</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Ensuring smooth operations and helping chapters thrive across different regions and industries.</p>
                 </div>
                 
-                <div class="team-card p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-card bg-white p-8 rounded-2xl shadow-xl text-center transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative mb-6 group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
                         <img src="images/Gaurav Jog.jpg" 
-                             alt="Team Member" class="w-32 h-32 rounded-full mx-auto object-cover">
+                             alt="Gaurav Jogi" 
+                             class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-primary shadow-lg relative z-10">
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-2">Gaurav Jogi</h3>
-                    <p class="text-gray-600 mb-4">Business Trainer</p>
-                    <p class="text-sm text-gray-500">Leading the vision of connecting businesses worldwide through meaningful networking opportunities.</p>
-                </div>
-                
-                
-                
-                <div class="team-card p-8 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative mb-6 group">
-                        <img src="images/ArpitShah.jpeg" 
-                             alt="Team Member" class="w-32 h-32 rounded-full mx-auto object-cover">
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-2">Arpit Shah</h3>
-                    <p class="text-gray-600 mb-4">Advisor Board Member</p>
-                    <p class="text-sm text-gray-500">Building strong relationships and fostering collaboration within our growing network community.</p>
+                    <h3 class="text-2xl font-bold text-primary mb-2">Gaurav Jogi</h3>
+                    <p class="text-primary font-semibold mb-4 text-lg">Business Trainer</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Leading the vision of connecting businesses worldwide through meaningful networking opportunities.</p>
                 </div>
             </div>
         </div>
