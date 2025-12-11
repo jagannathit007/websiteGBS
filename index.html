@@ -156,6 +156,174 @@
             color: #666;
             font-size: 0.9rem;
         }
+
+        /* GBS Core Ideology Styles */
+        .ideology-section {
+            background: #540A0E;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ideology-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: white;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .ideology-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: white;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .ideology-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ideology-logo-box {
+            background: white;
+            border: 2px solid #000;
+            padding: 1rem 2rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .ideology-triangle {
+            width: 0;
+            height: 0;
+            border-left: 8px solid #540A0E;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .vision-mission-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .vision-mission-item p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            quotes: '"' '"';
+        }
+
+        .vision-mission-item p::before {
+            content: open-quote;
+        }
+
+        .vision-mission-item p::after {
+            content: close-quote;
+        }
+
+        .b3-tagline {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .b3-text {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .b3-subtext {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-top: 0.5rem;
+        }
+
+        /* Founder Introduction Styles */
+        .founder-section {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+            border-radius: 0 0 100% 0;
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 6px solid #540A0E;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+        .founder-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #540A0E;
+            margin-bottom: 1rem;
+        }
+
+        .founder-quote {
+            font-size: 1.25rem;
+            color: #540A0E;
+            line-height: 1.8;
+            quotes: '"' '"';
+        }
+
+        .founder-quote::before {
+            content: open-quote;
+        }
+
+        .founder-quote::after {
+            content: close-quote;
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -172,7 +340,7 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
                 <a href="#about" class="text-white hover:text-gray-300 transition-colors">About</a>
-                <a href="#product" class="text-white hover:text-gray-300 transition-colors">Product</a>
+                <a href="#product" class="text-white hover:text-gray-300 transition-colors">Our App</a>
                 <a href="#franchise" class="text-white hover:text-gray-300 transition-colors">Franchise</a>
                 <a href="#connect" class="text-white hover:text-gray-300 transition-colors">Connect</a>
                 <a href="#team" class="text-white hover:text-gray-300 transition-colors">Team</a>
@@ -201,7 +369,7 @@
             <div class="container mx-auto px-4 py-4 space-y-4">
                 <a href="#home" class="block text-primary py-2">Home</a>
                 <a href="#about" class="block text-primary py-2">About</a>
-                <a href="#product" class="block text-primary py-2">Product</a>
+                <a href="#product" class="block text-primary py-2">Our App</a>
                 <a href="#franchise" class="block text-primary py-2">Franchise</a>
                 <a href="#connect" class="block text-primary py-2">Connect</a>
                 <a href="#team" class="block text-primary py-2">Team</a>
@@ -395,6 +563,98 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-18 w-40 max-w-full mx-auto object-contain">
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GBS Core Ideology Section -->
+    <section id="ideology" class="ideology-section py-20">
+        <div class="container mx-auto px-4">
+            <div class="ideology-content text-center text-white" data-aos="fade-up">
+                <!-- GBS Logo -->
+                <div class="ideology-logo-box">
+                    <div class="flex items-center justify-center space-x-2">
+                        <img src="./images/gbs-logo (1).png" alt="GBS Logo" class="h-12">
+                    </div>
+                </div>
+
+                <!-- Main Title -->
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">GBS Core Ideology</h2>
+
+                <!-- Vision and Mission Grid -->
+                <div class="vision-mission-grid text-left">
+                    <!-- Vision -->
+                    <div class="vision-mission-item" data-aos="fade-right" data-aos-delay="200">
+                        <h3>Vision:</h3>
+                        <p>To create the community of<br>
+                        like minded people & grow<br>
+                        together exponentially</p>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="vision-mission-item" data-aos="fade-left" data-aos-delay="300">
+                        <h3>Mission:</h3>
+                        <p>To become one of the<br>
+                        most sought networking &<br>
+                        social platform of the world<br>
+                        by contributing in 360<br>
+                        degree growth of patrons</p>
+                    </div>
+                </div>
+
+                <!-- B³ Tagline -->
+                <div class="b3-tagline" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-center space-x-4 mb-2">
+                        <div class="h-px w-32 bg-white opacity-30"></div>
+                        <div class="b3-text">B³</div>
+                        <div class="h-px w-32 bg-white opacity-30"></div>
+                    </div>
+                    <div class="b3-subtext">BUSINESS BEYOND BORDER</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Introduction Section -->
+    <section id="founder" class="founder-section py-20">
+        <div class="container mx-auto px-4">
+            <div class="founder-content">
+                <!-- Left Side - Text Content -->
+                <div class="relative z-10" data-aos="fade-right">
+                    <!-- GBS Logo -->
+                    <div class="mb-4">
+                        <img src="./images/gbs-logo (1).png" alt="GBS Logo" class="h-12">
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="founder-title">Founder<br>Introduction</h2>
+
+                    <!-- Quote -->
+                    <p class="founder-quote">
+                        Let's now honor the visionary behind this<br>
+                        initiative.<br>
+                        Our Founder – Pinkesh Patel – whose<br>
+                        commitment and leadership laid the<br>
+                        foundation of GBS.
+                    </p>
+                </div>
+
+                <!-- Right Side - Image -->
+                <div class="relative z-10" data-aos="fade-left">
+                    <img src="images/pinkeshpatel.jpeg" 
+                         alt="Pinkesh Patel - Founder of GBS" 
+                         class="founder-image">
+                </div>
+            </div>
+
+            <!-- B³ Tagline at Bottom -->
+            <div class="text-center mt-8" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2">
+                    <span class="text-4xl font-bold" style="color: #d4a574;">B³</span>
+                </div>
+                <div class="text-sm mt-2" style="color: #d4a574; letter-spacing: 2px;">
+                    BUSINESS BEYOND BORDER
                 </div>
             </div>
         </div>
